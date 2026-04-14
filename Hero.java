@@ -1,12 +1,18 @@
-import greenfoot.*;
-
-public class MyWorld extends World
+import greenfoot.*;  
+public class Hero extends Actor
 {
-    public MyWorld()
-    {
-        super(600, 400, 1);
+    boolean atTop = true;
 
-        Hero h = new Hero();
-        addObject(h, 100, 200);
+    public void act()
+    {
+        if (Greenfoot.mouseClicked(null)) {
+            atTop = !atTop;
+        }
+
+        if(atTop) {
+            setLocation(100, 100);
+        } else {
+            setLocation(100, 300);
+        }
     }
 }
